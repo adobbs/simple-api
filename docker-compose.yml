@@ -6,7 +6,7 @@ services:
     depends_on:
         - postgres
     ports:
-      - "5555:5555"
+    - "5555:5555"
   postgres:
     image: postgres:15
     environment:
