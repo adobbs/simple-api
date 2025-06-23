@@ -1,4 +1,12 @@
 services:
+  app:
+    build: .
+    environment:
+      DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public"
+    depends_on:
+        - postgres
+    ports:
+      - "5555:5555"
   postgres:
     image: postgres:15
     environment:
